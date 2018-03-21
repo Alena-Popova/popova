@@ -1,4 +1,4 @@
-package ru.job4j.tracker;
+package popova.tracker;
 
 /**
 * Класс реализации описания заявки
@@ -13,11 +13,16 @@ public class Item {
 	private long created;
 	private String[] comments;
 	
-	public Item(String id, String name, String desc, long created) {
-		this.id = id;
+	public Item() {
+		this.name = "";
+		this.desc = "";
+		this.created = 0;
+	}
+	
+	public Item(String name, String desc, long created) {
 		this.name = name;
 		this.desc = desc;
-		this.created = created
+		this.created = created;
 	}
 	
 	public void setId(String aId) {
@@ -28,6 +33,20 @@ public class Item {
 		this.name = aName;
 	}
 	
+	public void setDescription(String aDesc) {
+		this.desc = aDesc;
+	}
+	
+	public void setComments(String[] aComments) {
+		for (int count = 0; count < aComments.length; count++) {
+		this.comments[count] = aComments[count];
+		}
+
+	}
+
+	public void setCreated(long aCreated) {
+		this.created = aCreated;
+	}
 	
 	public String getId() {
 		return this.id;
@@ -38,15 +57,16 @@ public class Item {
 	}
 	
 	
-	public void setComments(String[] aComments) {
-		for (int count = 0; count < aComments.lenth; count++) {
-		this.comments[count] = aComments[count];
-		}
-
+	public String getDescription() {
+		return this.desc;
 	}
 	
 	public String[] getComments() {
 		return this.comments;
+	}
+
+	public long getCreated() {
+		return this.created;
 	}
 
 }
