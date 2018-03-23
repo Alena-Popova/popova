@@ -22,6 +22,7 @@ public class Tracker extends Item {
 		for (int i = 0; i < count; i++) {
 			if (this.items[i].getId().equals(id)) {
 				this.items[i] = item;
+				this.items[i].setId(id);
 			}
 		}
 	}
@@ -51,13 +52,14 @@ public class Tracker extends Item {
 	
 	public Item[] findByName(String key) {
 		Item[] itemsCopy = new Item[100];
+		itemsCopy[0]  = Item.EMPTY;
 		int cCopy = 0;
 		for (int i = 0; i < count; i++) {
 			if(this.items[i].getName(). equals(key)){
 				System.arraycopy(this.items, i, itemsCopy, cCopy++, 1);
 			}
 		}
-		return Arrays.copyOf(itemsCopy,cCopy);
+		return cCopy > 0 ? Arrays.copyOf(itemsCopy,cCopy) : Arrays.copyOf(itemsCopy,1);
 	}
 	
 	protected Item findById(String id) {

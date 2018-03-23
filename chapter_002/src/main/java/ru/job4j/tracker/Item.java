@@ -12,7 +12,9 @@ public class Item {
 	private String desc;
 	private long created;
 	private String[] comments;
-	
+
+	public static final Item EMPTY = new Item();
+
 	public Item() {
 		this.name = "";
 		this.desc = "";
