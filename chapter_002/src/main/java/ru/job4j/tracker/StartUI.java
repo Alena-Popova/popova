@@ -31,8 +31,17 @@ public class StartUI {
      * Хранилище заявок.
      */
     private final Tracker tracker;
-	
-	
+
+	/**
+	 * Конструктор для класса
+	 *@param inpuT //ввод данных.
+	 * @param inpuT
+	 */
+	public StartUI(Input inpuT) {
+		this.input = inpuT;
+		this.tracker = new Tracker();
+	}
+
 	/**
 	* Конструктор для класса
 	*@param inpuT //ввод данных.
@@ -200,7 +209,9 @@ public class StartUI {
      * @param args
      */
 	public static void main(String[] args) {
-		new StartUI(new ConsoleInput(), new Tracker()).init();
+		Input input = new StubInput(new String[] {"create stub task"});
+		//new StartUI(new ConsoleInput(), new Tracker()).init();
+		new StartUI(input).init();
 	}
 
 }

@@ -15,12 +15,21 @@ public class Item {
 
 	public static final Item EMPTY = new Item();
 
+	/**
+	 * Все виды конструкторов.
+	 */
 	public Item() {
 		this.name = "";
 		this.desc = "";
 		this.created = 0;
 	}
-	
+
+	public Item(String name, String desc) {
+		this.name = name;
+		this.desc = desc;
+		this.created = 0;
+	}
+
 	public Item(String name, String desc, long created) {
 		this.name = name;
 		this.desc = desc;
