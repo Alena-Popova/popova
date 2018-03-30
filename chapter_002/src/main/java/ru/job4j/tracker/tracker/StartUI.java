@@ -61,6 +61,20 @@ public class StartUI {
 		boolean exit = false;
 		MenuTracker menu = new MenuTracker(this.input, this.tracker);
 		menu.fillAction();
+		UserAction deleteAction = new UserAction() {
+			public int key(){
+				return 6;
+			}
+
+			public void execute(Input input,Tracker tracker){
+				//todo
+			}
+
+			public String info(){
+				return "Delete";
+			}
+		};
+		menu.addAction(deleteAction);
 		do {
 		menu.show();
 		menu.select(input.ask("Please, enter the key : ",menu.getRange()));
