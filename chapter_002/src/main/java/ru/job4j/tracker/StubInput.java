@@ -7,7 +7,7 @@ public class StubInput implements Input {
      * Поле считает количество вызовом метода ask.
      * При каждом вызове надо передвинуть указатель на новое число.
      */
-    private int position;
+    private int position = 0;
 
     public StubInput(final String[] value) {
         this.value = value;
@@ -28,6 +28,19 @@ public class StubInput implements Input {
 
 
     public int ask(String question, int[] range) {
-        throw new UnsupportedOperationException("Unsupported operation");
+        int key = Integer.valueOf(this.ask(""));
+        boolean exist = false;
+        for (int i : range) {
+            if (i == key) {
+                exist = true;
+                break;
+            }
+        }
+        if (exist) {
+            return key;
+        } else {
+            throw new MenuOutException("Out of menu range");
+        }
+
     }
 }

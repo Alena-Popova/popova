@@ -23,7 +23,8 @@ public class StubInputTest {
 
     @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
-        Input input = new StubInput(new String[]{"0", "test name", "desc", "1","6"});   //создаём StubInput с последовательностью действий
+        StubInput input = new StubInput(new String[]{"0", "test name", "desc", "y"});
+        //создаём StubInput с последовательностью действий
         new StartUI(input, tracker).init();     //   создаём StartUI и вызываем метод init()
         assertThat(tracker.getAll()[3].getName(), is("test name")); // проверяем, что четвертый элемент массива в трекере содержит имя, введённое при эмуляции.
     }
@@ -38,15 +39,12 @@ public class StubInputTest {
      */
     @Test
     public void whenUpdateThenTrackerHasUpdatedValue() {
-        //Напрямую добавляем заявку
-        Item item = tracker.add(new Item());
-        //создаём StubInput с последовательностью действий
         //Tracker работает немного по другому.
-        Input input = new StubInput(new String[]{"1", "2",item.getName(),"test name", "desc", "1", "6"});
+        StubInput input = new StubInput(new String[]{"1","no","2",itemF.getId(),"test name", "desc", "y"});
         // создаём StartUI и вызываем метод init()
         new StartUI(input, tracker).init();
         // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
-        assertThat(tracker.findById(item.getId()).getName(), is("test name"));
+        assertThat(tracker.findById(itemF.getId()).getName(), is("test name"));
     }
 
     /**
@@ -57,7 +55,7 @@ public class StubInputTest {
     @Test
     public void whenDeleteThenTrackerHasDeleteItem() {
         //создаём StubInput с последовательностью действий
-        Input input = new StubInput(new String[]{ "3", "2", "6"});
+        StubInput input = new StubInput(new String[]{ "3",itemS.getId(), "y"});
         // создаём StartUI и вызываем метод init()
         new StartUI(input, tracker).init();
         // проверяем, что второй элемент удалился и на его место встал третий.
@@ -72,7 +70,7 @@ public class StubInputTest {
     @Test
     public void whenFindItemByIdThenTrackerReturnItem() {
         //создаём StubInput с последовательностью действий
-        Input input = new StubInput(new String[]{ "4", itemT.getId(), "6"});
+        StubInput input = new StubInput(new String[]{ "4", itemT.getId(), "y"});
         // создаём StartUI и вызываем метод init()
         new StartUI(input, tracker).init();
         // проверяем, что нашли третий элемент.

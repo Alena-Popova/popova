@@ -61,8 +61,8 @@ public class Tracker extends Item {
 		}
 		return cCopy > 0 ? Arrays.copyOf(itemsCopy,cCopy) : Arrays.copyOf(itemsCopy,1);
 	}
-	
-	protected Item findById(String id) {
+
+	public Item findById(String id) {
 		Item findItem = null; // а мне говорили,что так делать нельзя
 		for(Item offer : items) {
 			if (offer != null && offer.getId().equals(id)) {
@@ -80,5 +80,11 @@ public class Tracker extends Item {
 
 	public int getCount() {
 		return this.count;
+	}
+
+	public void exit() {
+
+		System.out.println("Вы вышли");
+		System.exit(0);
 	}
 }
