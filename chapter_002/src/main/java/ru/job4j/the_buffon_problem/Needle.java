@@ -2,8 +2,14 @@ package popova.itmo_lesson.the_buffon_problem;
 
 import java.security.SecureRandom;
 
+/**
+ * Класс для иглы, где задаются ее кординаты на доске по оси У и длина.
+ */
 public class Needle {
     private double lenght;
+    /**
+     * это координаты на доске по оси Ординат
+     */
     private double[] couplePoint = new double[2];
 
     public Needle(double lenght) {
