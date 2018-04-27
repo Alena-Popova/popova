@@ -93,9 +93,8 @@ public class DataJPG {
     }
 
     public double getCos(DataJPG dataJPG) {
-        double result = 0;
-            result += this.getScalar(dataJPG)/(this.getModule() * dataJPG.getModule());
-        return result > 0 ? result : Math.abs(result) + 1;
+        double result = this.getScalar(dataJPG)/(this.getModule() * dataJPG.getModule());
+        return Math.acos(result);
     }
 
     /**

@@ -17,7 +17,7 @@ public class Main {
         List<DataJPG> tests = loader.getTest();
         AtomicInteger atomicIterarion = new AtomicInteger();
         AtomicInteger atomicError = new AtomicInteger();
-        for(int i = 0;i < 2;i++) {
+        for(int i = 0;i < 4;i++) {
             new Thread(new RecognitionByCorner(mnist, tests, atomicIterarion, i, atomicError)).start();
             // new Thread(new Recognition(mnist, tests, atomicIterarion, i, atomicError)).start();
         }

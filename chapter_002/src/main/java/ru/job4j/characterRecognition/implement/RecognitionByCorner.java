@@ -21,7 +21,7 @@ public class RecognitionByCorner extends ModelBehavior implements Runnable {
     @Override
     public void run(){
         TheCornersStrategy theCornersStrategy = new TheCornersStrategy(this.getMnist());
-        for (int i = this.getTask()*100; i < this.getTask()*100 + 100; i++) {
+        for (int i = this.getTask()*2500; i < this.getTask()*2500 + 2500; i++) {
             this.atomicIteration.incrementAndGet();
             DataJPG newData = this.getTests().get(i);
             if(newData.getLable() != theCornersStrategy.getMinNeighborbyCos(newData)) {
@@ -29,7 +29,7 @@ public class RecognitionByCorner extends ModelBehavior implements Runnable {
             }
 
             getPercentageCompletion( this.atomicIteration.get());
-            if(this.atomicIteration.get() == 199) {
+            if(this.atomicIteration.get() == 9999) {
                 getInfo(atomicError.get());
             }
         }
