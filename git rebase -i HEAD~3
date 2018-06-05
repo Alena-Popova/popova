@@ -1,0 +1,23 @@
+[33mcommit f90ef824d88745f3adbf0a37cf160fcc8d38ea46[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Alena-Popova <popova-alena1995@mail.ru>
+Date:   Thu May 10 15:42:24 2018 +0300
+
+    коллекции
+
+[33mcommit 5cb56d6f49738bf5c5469f0d7a06a91f2ec74645[m
+Author: Alena-Popova <popova-alena1995@mail.ru>
+Date:   Tue May 8 15:54:46 2018 +0300
+
+    банковские переводы
+
+[33mcommit 0540fca7fa1a86ddb4d2a52a202f22d208003f78[m
+Author: Alena-Popova <popova-alena1995@mail.ru>
+Date:   Fri Apr 27 15:32:55 2018 +0300
+
+     Исправления. метод находждения по углу между векторами - точность 97.23%
+
+[33mcommit 3e7648106d748070c39fb1cfd8bca8c282f39be7[m
+Author: Alena-Popova <popova-alena1995@mail.ru>
+Date:   Thu Apr 26 15:54:30 2018 +0300
+
+    Запуск приложения. Подставляя нужный класс потока мы реализуем разные стратегии поиска.
